@@ -1,0 +1,1 @@
+class OwnerDecorator < UserDecorator; end

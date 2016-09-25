@@ -1,0 +1,13 @@
+doctype html
+html
+  head
+    title ShopAccounting
+    = csrf_meta_tags
+
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+  body
+    div
+      = link_to 'Log In Owner', new_owner_session_path
+    = yield

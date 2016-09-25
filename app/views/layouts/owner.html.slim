@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    title ShopAccounting
+    = csrf_meta_tags
+
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+  body
+    div
+      - if current_owner
+        => link_to 'Deliveries', owner_deliveries_path
+        | |
+        => link_to 'Shops', owner_shops_path
+        | |
+        => link_to current_owner.full_name, edit_owner_profile_path
+        | |
+        = link_to 'Log Out', owner_session_path, method: :delete
+      - else
+        = link_to 'Log In Owner', new_owner_session_path
+
+    = yield

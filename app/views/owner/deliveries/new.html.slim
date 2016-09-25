@@ -1,0 +1,7 @@
+h1 Owner::Deliveries
+
+= simple_form_for [current_owner, @delivery] do |f|
+  = f.input :uid
+  = f.input :departure
+  = f.input :arrival
+  = f.submit 'Save'
