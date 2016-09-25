@@ -1,0 +1,7 @@
+h1
+  ' Edit delivery
+  = @delivery.uid
+
+= simple_form_for [current_admin, @delivery], url: admin_delivery_path(@delivery) do |f|
+  = f.input :arrival, as: :string, input_html: { value: readable_date(@delivery.arrival) }
+  = f.submit 'Save'

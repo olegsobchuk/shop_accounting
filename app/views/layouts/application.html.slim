@@ -9,5 +9,7 @@ html
 
   body
     div
-      = link_to 'Log In Owner', new_owner_session_path
+      => link_to 'Log In Owner', new_owner_session_path
+      ' |
+      = link_to 'Log In Admin', new_admin_session_path
     = yield

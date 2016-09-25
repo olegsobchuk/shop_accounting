@@ -10,4 +10,8 @@ FactoryGirl.define do
   factory :owner, parent: :user do
     type 'Owner'
   end
+
+  factory :admin, parent: :user do
+    type 'Admin'
+  end
 end

@@ -1,14 +1,14 @@
-class Owner::SessionsController < ApplicationController
+class Admin::SessionsController < ApplicationController
   layout false
 
   def new
-    @owner = Owner.new
+    @admin = Admin.new
   end
 
   def create
     if user&.authenticate(user_params[:password])
       session[:user_id] = user.id
-      redirect_to owner_deliveries_path
+      redirect_to admin_deliveries_path
     else
       redirect_to root_path, notice: 'Invalid password or username.'
     end
@@ -22,10 +22,10 @@ class Owner::SessionsController < ApplicationController
   private
 
   def user_params
-    @user_params ||= params.require(:owner).permit(:email, :password)
+    @user_params ||= params.require(:admin).permit(:email, :password)
   end
 
   def user
-    @user ||= Owner.find_by(email: user_params[:email])
+    @user ||= Admin.find_by(email: user_params[:email])
   end
 end
