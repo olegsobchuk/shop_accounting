@@ -1,0 +1,10 @@
+tr id="delivery_#{delivery.id}"
+  td
+    = delivery.uid
+  td
+    = readable_date(delivery.departure)
+  td
+    = readable_date(delivery.arrival)
+  td
+    => link_to 'Show', admin_delivery_path(delivery)
+    = link_to 'Edit', edit_admin_delivery_path(delivery)

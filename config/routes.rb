@@ -11,4 +11,11 @@ Rails.application.routes.draw do
     resources :deliveries, except: :destroy
     resources :shops
   end
+
+  namespace :admin do
+    resource :session, only: [:new, :create, :destroy]
+    resource :profile, only: [:edit, :update]
+    resources :deliveries, only: [:index, :show, :edit, :update]
+    resources :shops, only: [:index, :show]
+  end
 end
