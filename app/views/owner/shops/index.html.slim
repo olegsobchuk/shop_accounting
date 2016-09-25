@@ -1,0 +1,17 @@
+h1 Shops list
+
+div
+  = link_to '+ Add', new_owner_shop_path
+
+table
+  thead
+    tr
+      th
+        Name
+      th
+        City
+      th
+        Address
+      th
+  tbody
+    = render partial: 'shop', collection: @shops

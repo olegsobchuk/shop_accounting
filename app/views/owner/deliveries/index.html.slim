@@ -1,0 +1,12 @@
+h1 Owner::Deliveries#index
+div
+  = link_to '+ Add', new_owner_delivery_path
+table
+  thead
+    tr
+      th UID
+      th Departure
+      th Arrival
+      th
+  tbody
+    = render partial: 'delivery', collection: @deliveries
