@@ -3,5 +3,7 @@ h1
   = @delivery.uid
 
 = simple_form_for [current_admin, @delivery], url: admin_delivery_path(@delivery) do |f|
-  = f.input :arrival, as: :string, input_html: { value: readable_date(@delivery.arrival) }
+  ' Departure
+  = readable_date(@delivery.departure)
+  = f.input :arrival, as: :string, input_html: { value: readable_date(@delivery.arrival) }, placeholder: 'DD/MM/YYYY'
   = f.submit 'Save'

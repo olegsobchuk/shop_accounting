@@ -2,5 +2,4 @@ div
   ' Delivery
   = @delivery.uid
 
-div
-  | Here will be table with stuff
+= render partial: 'owner/things/things_table', locals: { things: @things }

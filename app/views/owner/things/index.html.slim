@@ -1,0 +1,16 @@
+h1 Index thing
+
+div
+  = link_to '+ Add Thing', new_admin_thing_path
+
+table
+  thead
+    tr
+      tr Name
+      tr Description
+      tr Delivery
+      tr Shop
+      tr Image
+      tr
+  tbody
+    = render partial: 'thing', collection: @things

@@ -9,6 +9,10 @@ class Owner::DeliveriesController < OwnerController
     @delivery = Delivery.new
   end
 
+  def show
+    @things = @delivery.things
+  end
+
   def create
     delivery = Delivery.new(delivery_params)
     if delivery.valid? && delivery.save

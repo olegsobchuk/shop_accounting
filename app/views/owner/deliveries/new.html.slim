@@ -2,6 +2,6 @@ h1 Owner::Deliveries
 
 = simple_form_for [current_owner, @delivery] do |f|
   = f.input :uid
-  = f.input :departure
-  = f.input :arrival
+  = f.input :departure, as: :string, placeholder: 'DD/MM/YYYY'
+  = f.input :arrival, as: :string, placeholder: 'DD/MM/YYYY'
   = f.submit 'Save'

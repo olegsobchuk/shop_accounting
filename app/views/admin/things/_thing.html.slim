@@ -1,0 +1,13 @@
+tr
+  td
+    = thing.name
+  td
+    = thing.description
+  td
+    = link_to thing.delivery.uid, admin_delivery_path(thing.delivery)
+  td
+    = link_to thing.shop.name, admin_shop_path(thing.shop)
+  td
+    = thing.image
+  td
+    = link_to 'Details', admin_thing_path(thing, back_path: request.env['PATH_INFO'])

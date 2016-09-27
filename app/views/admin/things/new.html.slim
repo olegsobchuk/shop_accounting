@@ -1,0 +1,10 @@
+h1 Thing
+
+= simple_form_for [:admin, @thing] do |f|
+  = f.input :uid
+  = f.input :shop_id, collection: @shops, prompt: 'Select Shop', label_method: :last, value_method: :first
+  = f.input :name
+  = f.input :description
+  = f.input :price
+  = f.input :image
+  = f.submit 'Save'
