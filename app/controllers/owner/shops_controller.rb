@@ -9,6 +9,10 @@ class Owner::ShopsController < OwnerController
     @shop = Shop.new
   end
 
+  def show
+    @things = @shop.things
+  end
+
   def create
     shop = Shop.new(shop_params)
     if shop.valid? && shop.save

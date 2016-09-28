@@ -1,0 +1,20 @@
+tr
+  td
+    = thing.uid
+  td
+    = thing.name
+  td
+    = thing.description
+  td
+    = thing.image
+  td
+    = thing.price
+  td
+    = thing.discount
+  td
+    = link_to thing.delivery.uid, owner_delivery_path(thing.delivery)
+  td
+    = link_to thing.shop.name, owner_shop_path(thing.shop)
+  td
+    => link_to 'Edit', edit_owner_thing_path(thing, back_path: request.env['PATH_INFO'])
+    = link_to 'Remove', owner_thing_path(thing, back_path: request.env['PATH_INFO']), method: :delete, data: { confirm: 'Are you sure?' }

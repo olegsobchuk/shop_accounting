@@ -5,6 +5,10 @@ class Admin::DeliveriesController < AdminController
     @deliveries = Delivery.by_create.page(params[:page])
   end
 
+  def show
+    @things = @delivery.things.page(params[:page])
+  end
+
   def update
     if @delivery.update(delivery_params)
       redirect_to admin_deliveries_path

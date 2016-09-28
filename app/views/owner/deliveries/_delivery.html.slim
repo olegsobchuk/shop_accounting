@@ -2,9 +2,9 @@ tr id="delivery_#{delivery.id}"
   td
     = delivery.uid
   td
-    = delivery.departure
+    = readable_date(delivery.departure)
   td
-    = delivery.arrival
+    = readable_date(delivery.arrival)
   td
     => link_to 'Show', owner_delivery_path(delivery)
     = link_to 'Edit', edit_owner_delivery_path(delivery)

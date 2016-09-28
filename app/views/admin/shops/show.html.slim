@@ -6,3 +6,9 @@ div
   = @shop.city
 div
   = @shop.address
+
+h3 Goods
+div
+  - @shop.things.each do |thing|
+    div
+      = link_to thing.name, admin_thing_path(thing, back_path: request.env['PATH_INFO'])

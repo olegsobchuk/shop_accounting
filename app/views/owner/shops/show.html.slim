@@ -6,3 +6,5 @@ div
   = @shop.city
 div
   = @shop.address
+
+= render partial: 'owner/things/things_table', locals: { things: @things }

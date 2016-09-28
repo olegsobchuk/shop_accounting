@@ -3,4 +3,17 @@ div
   = @delivery.uid
 
 div
-  | Here will be table with stuff
+  - if @delivery.arrival
+    = link_to '+ Add Thing', new_admin_thing_path(@delivery)
+
+    table
+      thead
+        tr
+          td Name
+          td Description
+          td Delivery
+          td Shop
+          td Image
+          td
+      tbody
+        = render partial: 'admin/things/thing', collection: @things
