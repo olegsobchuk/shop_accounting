@@ -20,4 +20,9 @@ Rails.application.routes.draw do
     resources :things, only: [:new, :show, :create, :update]
     resources :shops, only: [:index, :show]
   end
+
+  namespace :assistant do
+    resource :session, only: [:new, :create, :destroy]
+    resources :things, only: [:index, :show, :edit, :update]
+  end
 end

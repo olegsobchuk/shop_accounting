@@ -1,0 +1,15 @@
+#search
+  = search_field_tag :uid
+
+table
+  tbody
+    tr
+      th UID
+      th Name
+      th Description
+      th Image
+      th Price
+      th Discount
+      th Summary
+      th
+    = render partial: 'thing', collection: @things

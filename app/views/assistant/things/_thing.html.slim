@@ -1,0 +1,18 @@
+tr id="thing_#{thing.id}"
+  td
+    = thing.uid
+  td
+    = thing.name
+  td
+    = thing.description
+  td
+    = thing.image
+  td
+    = thing.price
+  td
+    = thing.discount
+  td
+    = thing.sum
+  td
+    - unless thing.sold
+      = button_to('Sell', assistant_thing_path(thing), method: :patch, data: { confirm: 'Are uoy sure?', disable_with: 'Processing...' })

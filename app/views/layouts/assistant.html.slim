@@ -9,9 +9,11 @@ html
 
   body
     div
-      => link_to 'Log In Owner', new_owner_session_path
-      ' |
-      = link_to 'Log In Admin', new_admin_session_path
-      ' |
-      = link_to 'Log In Assistant', new_assistant_session_path
+      - if current_assistant
+        => link_to current_assistant.full_name, edit_admin_profile_path
+        | |
+        = link_to 'Log Out', admin_session_path, method: :delete
+      - else
+        = link_to 'Log In as Admin', new_admin_session_path
+
     = yield
