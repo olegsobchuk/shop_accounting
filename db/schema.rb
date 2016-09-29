@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160926174510) do
+ActiveRecord::Schema.define(version: 20160929181401) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,8 +42,12 @@ ActiveRecord::Schema.define(version: 20160926174510) do
     t.integer  "discount"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.boolean  "sold"
+    t.datetime "sold_date"
     t.index ["delivery_id"], name: "index_things_on_delivery_id", using: :btree
     t.index ["shop_id"], name: "index_things_on_shop_id", using: :btree
+    t.index ["sold"], name: "index_things_on_sold", using: :btree
+    t.index ["sold_date"], name: "index_things_on_sold_date", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -51,12 +55,14 @@ ActiveRecord::Schema.define(version: 20160926174510) do
     t.string   "password_digest"
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "placing"
     t.string   "phone_first"
     t.string   "phone_second"
     t.string   "type"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.integer  "shop_id"
+    t.index ["shop_id"], name: "index_users_on_shop_id", using: :btree
   end
 
+  add_foreign_key "users", "shops"
 end

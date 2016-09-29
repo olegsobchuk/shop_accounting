@@ -1,0 +1,1 @@
+class AssistantDecorator < UserDecorator; end
