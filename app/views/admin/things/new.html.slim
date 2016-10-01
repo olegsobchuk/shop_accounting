@@ -1,6 +1,6 @@
 h1 Thing
 
-= simple_form_for [:admin, @thing] do |f|
+= simple_form_for [:admin, @delivery, @thing] do |f|
   = f.input :uid
   = f.input :shop_id, collection: @shops, prompt: 'Select Shop', label_method: :last, value_method: :first
   = f.input :name

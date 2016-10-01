@@ -4,7 +4,7 @@ div
 
 div
   - if @delivery.arrival
-    = link_to '+ Add Thing', new_admin_thing_path(@delivery)
+    = link_to '+ Add Thing', new_admin_delivery_thing_path(@delivery)
 
     table
       thead
@@ -14,6 +14,7 @@ div
           td Delivery
           td Shop
           td Image
+          td Weight
           td
       tbody
         = render partial: 'admin/things/thing', collection: @things

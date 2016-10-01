@@ -16,8 +16,10 @@ Rails.application.routes.draw do
   namespace :admin do
     resource :session, only: [:new, :create, :destroy]
     resource :profile, only: [:edit, :update]
-    resources :deliveries, only: [:index, :show, :edit, :update]
-    resources :things, only: [:new, :show, :create, :update]
+    resources :deliveries, only: [:index, :show, :edit, :update] do
+      resources :things, only: [:new, :create, :update]
+    end
+    resources :things, only: :show
     resources :shops, only: [:index, :show]
   end
 

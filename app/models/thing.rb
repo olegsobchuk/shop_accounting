@@ -1,5 +1,5 @@
 class Thing < ApplicationRecord
-  validates :name, :description, :price, :discount, presence: true
+  validates :name, :description, :price, :weight, presence: true
   validates :uid, uniqueness: true, presence: true
 
   belongs_to :delivery
