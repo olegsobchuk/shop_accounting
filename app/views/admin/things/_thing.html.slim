@@ -10,4 +10,6 @@ tr
   td
     = thing.image
   td
+    = thing.weight
+  td
     = link_to 'Details', admin_thing_path(thing, back_path: request.env['PATH_INFO'])

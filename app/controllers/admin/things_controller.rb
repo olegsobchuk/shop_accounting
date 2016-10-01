@@ -1,6 +1,7 @@
 class Admin::ThingsController < AdminController
   before_action :thing, only: [:show, :edit, :update]
   before_action :back_path, only: [:show, :update, :create]
+  before_action :delivery, only: [:new, :create, :update]
 
   def new
     @thing = Thing.new
@@ -12,10 +13,11 @@ class Admin::ThingsController < AdminController
   end
 
   def create
-    thing = Things.new(thing_params)
-    if thing.valid? && thing.save
-      redirect_to back_path
+    @thing = delivery.things.build(thing_params)
+    if @thing.valid? && @thing.save
+      redirect_to admin_delivery_path(delivery)
     else
+      @shops = Shop.pluck(:id, :name)
       render action: :new, back_path: back_path
     end
   end
@@ -35,10 +37,14 @@ class Admin::ThingsController < AdminController
   end
 
   def thing_params
-    params.require(:thing).permit(:shop_id, :name, :description, :price)
+    params.require(:thing).permit(:uid, :shop_id, :name, :description, :price)
   end
 
   def back_path
     back_path = params[:back_path]
+  end
+
+  def delivery
+    @delivery ||= Delivery.find(params[:delivery_id])
   end
 end
