@@ -37,7 +37,7 @@ class Admin::ThingsController < AdminController
   end
 
   def thing_params
-    params.require(:thing).permit(:uid, :shop_id, :name, :description, :price)
+    params.require(:thing).permit(:uid, :shop_id, :name, :description, :price, :weight)
   end
 
   def back_path
