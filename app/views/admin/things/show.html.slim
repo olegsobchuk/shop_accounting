@@ -2,5 +2,7 @@ h1 Show thing
 
 div
   = link_to 'Back', params[:back_path]
-
-= @thing.name
+div
+  = @thing.name
+div
+  = image_tag(@thing.image_url) if @thing.image_url

@@ -15,6 +15,7 @@ class Admin::ThingsController < AdminController
   def create
     @thing = delivery.things.build(thing_params)
     if @thing.valid? && @thing.save
+      @thing.upload_image(params.dig(:thing, :image).path)
       redirect_to admin_delivery_path(delivery)
     else
       @shops = Shop.pluck(:id, :name)
@@ -24,6 +25,10 @@ class Admin::ThingsController < AdminController
 
   def update
     if @thing.update(thing_params)
+      if params.dig(:thing, :image) && @thing.image_id
+        FlickrService.remove(@thing.image_id)
+      end
+      @thing.upload_image(params.dig(:thing, :image))
       redirect_to back_path
     else
       render action: :new, back_path: back_path
