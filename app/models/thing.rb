@@ -11,4 +11,15 @@ class Thing < ApplicationRecord
   def sold!
     update(sold: true, sold_date: DateTime.current)
   end
+
+  def upload_image(image)
+    image_id = FlickrService.upload(image)
+    if image_id
+      self.image_id = image_id
+      info = FlickrService.get_info(image_id)
+      self.image_url = FlickRaw.url_b(info)
+      self.image_thumb = FlickRaw.url_t(info)
+      self.save
+    end
+  end
 end
