@@ -1,12 +1,12 @@
 class Assistant::ThingsController < AssistantController
   before_action :thing, only: [:show, :edit, :update]
 
-  def show
-    @thing = @thing.decorate
+  def index
+    @things = current_assistant.things.existing.page(params[:page]).decorate
   end
 
-  def index
-    @things = current_assistant.can_sell.page(params[:page]).decorate
+  def show
+    @thing = @thing.decorate
   end
 
   def update
@@ -17,6 +17,6 @@ class Assistant::ThingsController < AssistantController
   private
 
   def thing
-    @thing = Thing.find(params[:id])
+    @thing = current_assistant.things.find(params[:id])
   end
 end
