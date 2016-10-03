@@ -1,0 +1,17 @@
+tr
+  td
+    = assistant.email
+  td
+    = assistant.first_name
+  td
+    = assistant.last_name
+  td
+    = assistant.phone_first
+  td
+    = assistant.phone_second
+  td
+    = assistant.shop.name
+  td
+    => link_to 'Show', admin_assistant_path(assistant)
+    => link_to 'Edit', edit_admin_assistant_path(assistant)
+    = link_to 'Destroy', admin_assistant_path(assistant), method: :delete, data: { confirm: 'Are you sure?' }
