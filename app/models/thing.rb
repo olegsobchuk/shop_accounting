@@ -1,15 +1,16 @@
 class Thing < ApplicationRecord
   validates :name, :description, :price, :weight, presence: true
-  validates :uid, uniqueness: true, presence: true
+    validates :uid, uniqueness: true, presence: true
 
   belongs_to :delivery
   belongs_to :shop
 
   scope :by_create, -> { order(:created_at) }
-  scope :existing, -> { where.not(sold: true) }
+  scope :existing, -> { where(sold_date: nil) }
+  scope :sold_in, -> (from_date, to_date) { where(sold_date: [from_date.to_date.beginning_of_day..to_date.to_date.end_of_day]) }
 
   def sold!
-    update(sold: true, sold_date: DateTime.current)
+    update(sold_date: DateTime.current)
   end
 
   def upload_image(image)

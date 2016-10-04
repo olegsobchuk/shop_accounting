@@ -6,7 +6,7 @@ tr id="thing_#{thing.id}"
   td
     = thing.description
   td
-    = thing.image_thumb
+    = image_tag(thing.image_thumb) if thing.image_thumb
   td
     = thing.weight
   td
@@ -14,7 +14,7 @@ tr id="thing_#{thing.id}"
   td
     = thing.discount
   td
-    = thing.sum
+    = thing.sum.round(2)
   td
     - unless thing.sold
       = button_to('Sell', assistant_thing_path(thing), method: :patch, data: { confirm: 'Are uoy sure?', disable_with: 'Processing...' })

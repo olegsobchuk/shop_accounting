@@ -1,0 +1,33 @@
+h1 Account
+
+#account_form
+  = form_tag assistant_accounts_path, method: :get
+  = text_field_tag :from_date, params[:from_date], class: 'datepicker'
+  = text_field_tag :to_date, params[:to_date], class: 'datepicker'
+  = submit_tag 'Generate'
+
+#sold_things
+  table
+    thead
+      tr
+        th UID
+        th Name
+        th Description
+        th Image
+        th Weight
+        th Price
+        th Discount
+        th Price(with discount)
+        th Shop
+        th Thumb
+    tbody
+      = render partial: 'thing', collection: @things
+
+  hr
+  | Total for period
+  br
+  ' Total weigh:
+  = total_weight(@things)
+  br
+  ' Total incoming:
+  = total_incoming(@things)

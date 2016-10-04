@@ -27,6 +27,7 @@ Rails.application.routes.draw do
 
   namespace :assistant do
     resource :session, only: [:new, :create, :destroy]
+    resource :accounts, only: :show
     resources :things, only: [:index, :show, :edit, :update]
   end
 end

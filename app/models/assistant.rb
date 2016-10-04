@@ -2,8 +2,5 @@ class Assistant < User
   validates :email, :shop_id, :first_name, :last_name, :phone_first, presence: true
 
   belongs_to :shop
-
-  def can_sell
-    shop.things.existing
-  end
+  has_many :things, through: :shop
 end
