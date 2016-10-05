@@ -8,6 +8,8 @@ class Thing < ApplicationRecord
   scope :by_create, -> { order(:created_at) }
   scope :existing, -> { where(sold_date: nil) }
   scope :sold_in, -> (from_date, to_date) { where(sold_date: [from_date.to_date.beginning_of_day..to_date.to_date.end_of_day]) }
+  scope :with_uid, -> (uid) { where("uid ILIKE ?", "#{uid}%") }
+  scope :existing_with_uid, -> (uid) { existing.with_uid(uid) }
 
   def sold!
     update(sold_date: DateTime.current)

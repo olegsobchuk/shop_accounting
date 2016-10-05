@@ -3,8 +3,8 @@ div
 #search
   = search_field_tag :uid
 
-table
-  tbody
+table#things
+  thead
     tr
       th UID
       th Name
@@ -15,4 +15,5 @@ table
       th Discount
       th Summary
       th
+  tbody
     = render partial: 'thing', collection: @things
