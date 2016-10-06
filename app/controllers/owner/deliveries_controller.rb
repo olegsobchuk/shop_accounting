@@ -14,8 +14,8 @@ class Owner::DeliveriesController < OwnerController
   end
 
   def create
-    delivery = Delivery.new(delivery_params)
-    if delivery.valid? && delivery.save
+    @delivery = Delivery.new(delivery_params)
+    if @delivery.valid? && @delivery.save
       redirect_to owner_deliveries_path
     else
       render :new

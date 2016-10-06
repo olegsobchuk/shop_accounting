@@ -1,1 +1,3 @@
-class Owner < User; end
+class Owner < User
+  validates :email, presence: true, format: { with: /\A.+@.+\..+/ }
+end

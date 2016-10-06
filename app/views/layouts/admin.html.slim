@@ -10,16 +10,16 @@ html
   body
     div
       - if current_admin
-        => link_to 'Deliveries', admin_deliveries_path
+        => link_to 'Доствки', admin_deliveries_path
         | |
-        => link_to 'Shops', admin_shops_path
+        => link_to 'Магазины', admin_shops_path
         | |
-        => link_to 'Assistance', admin_assistants_path
+        => link_to 'Продавцы', admin_assistants_path
         | |
         => link_to current_admin.full_name, edit_admin_profile_path
         | |
-        = link_to 'Log Out', admin_session_path, method: :delete
+        = link_to 'ВЫЙТИ', admin_session_path, method: :delete
       - else
-        = link_to 'Log In as Admin', new_admin_session_path
+        = link_to 'Войти как Админ', new_admin_session_path
 
     = yield

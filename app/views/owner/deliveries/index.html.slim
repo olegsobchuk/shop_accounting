@@ -1,12 +1,12 @@
-h1 Owner::Deliveries#index
+h1 Список доставок
 div
-  = link_to '+ Add', new_owner_delivery_path
+  = link_to '+ Добавить', new_owner_delivery_path
 table
   thead
     tr
-      th UID
-      th Departure
-      th Arrival
+      th Уникальный номер
+      th Отправка
+      th Доставка
       th
   tbody
     = render partial: 'delivery', collection: @deliveries

@@ -1,9 +1,9 @@
-h1 Edit Profile
+h1 Редактировать профайл
 
 = simple_form_for current_admin, url: admin_profile_path, method: :patch do |f|
   = f.input :email
-  = f.input :first_name
-  = f.input :last_name
-  = f.input :password
-  = f.input :password_confirmation
-  = f.submit 'Save'
+  = f.input :first_name, label: 'Имя'
+  = f.input :last_name, label: 'Фамилия'
+  = f.input :password, label: 'Пароль'
+  = f.input :password_confirmation, label: 'Подтверждение пароля'
+  = f.submit 'Сохранить'

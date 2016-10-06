@@ -21,3 +21,60 @@
 
 en:
   hello: "Hello world"
+  activerecord:
+    errors:
+      models:
+        delivery:
+          attributes:
+            uid:
+              blank: 'Не может быть пустым'
+            departure:
+              blank: 'Не может быть пустым'
+        shop:
+          attributes:
+            name:
+              blank: 'Не может быть пустым'
+            city:
+              blank: 'Не может быть пустым'
+            address:
+              blank: 'Не может быть пустым'
+        owner:
+          attributes:
+            email:
+              blank: 'Не может быть пустым'
+              invalid: 'Должно быть формата ХХХ@ХХХ.ХХХ'
+            password:
+              blank: 'Не может быть пустым'
+              confirmation: 'Должно совпадать с паролем'
+        admin:
+          attributes:
+            email:
+              taken: 'Такой email уже занят'
+              blank: 'Не может быть пустым'
+              invalid: 'Должно быть формата ХХХ@ХХХ.ХХХ'
+            first_name:
+              blank: 'Не может быть пустым'
+            last_name:
+              blank: 'Не может быть пустым'
+            phone_first:
+              blank: 'Не может быть пустым'
+            password:
+              blank: 'Не может быть пустым'
+              confirmation: 'Должно совпадать с паролем'
+        assistant:
+          attributes:
+            email:
+              taken: 'Такой email уже занят'
+              blank: 'Не может быть пустым'
+              invalid: 'Должно быть формата ХХХ@ХХХ.ХХХ'
+            first_name:
+              blank: 'Не может быть пустым'
+            last_name:
+              blank: 'Не может быть пустым'
+            phone_first:
+              blank: 'Не может быть пустым'
+            shop:
+              blank: 'Не может быть пустым'
+            password:
+              blank: 'Не может быть пустым'
+              confirmation: 'Должно совпадать с паролем'

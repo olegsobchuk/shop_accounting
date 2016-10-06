@@ -1,5 +1,5 @@
 div
-  ' Delivery
+  ' Доставка
   = @delivery.uid
 
 div
@@ -9,12 +9,12 @@ div
     table
       thead
         tr
-          td Name
-          td Description
-          td Delivery
-          td Shop
-          td Image
-          td Weight
+          td Названик
+          td Описание
+          td Дата доставки
+          td Магазин
+          td изображение
+          td Вес
           td
       tbody
         = render partial: 'admin/things/thing', collection: @things

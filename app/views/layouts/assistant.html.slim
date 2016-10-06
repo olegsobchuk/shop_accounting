@@ -10,10 +10,10 @@ html
   body
     div
       - if current_assistant
-        => link_to 'Presence thing', assistant_things_path
+        => link_to 'Вещи в наличии', assistant_things_path
         | |
-        = link_to 'Log Out', admin_session_path, method: :delete
+        = link_to 'ВЫЙТИ', admin_session_path, method: :delete
       - else
-        = link_to 'Log In as Assistant', new_assistant_session_path
+        = link_to 'Войти как Продавец', new_assistant_session_path
 
     = yield

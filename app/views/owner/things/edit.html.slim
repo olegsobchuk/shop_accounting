@@ -1,8 +1,8 @@
 h1 Edit thing
 
-= link_to 'Back', params[:back_path]
+= link_to 'Назад', params[:back_path]
 
 = simple_form_for @thing, url: owner_thing_path(@thing, back_path: params[:back_path]) do |f|
-  = f.input :price
-  = f.input :discount
-  = f.submit 'Save'
+  = f.input :price, label: 'Цена'
+  = f.input :discount, label: 'Скидка'
+  = f.submit 'Сохранить'

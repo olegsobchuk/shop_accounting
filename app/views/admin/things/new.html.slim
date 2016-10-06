@@ -1,11 +1,11 @@
 h1 Thing
 
 = simple_form_for [:admin, @delivery, @thing] do |f|
-  = f.input :uid
-  = f.input :shop_id, collection: @shops, prompt: 'Select Shop', label_method: :last, value_method: :first
-  = f.input :name
-  = f.input :description
-  = f.input :price
-  = f.input :weight
+  = f.input :uid, label: 'Уник. номер'
+  = f.input :shop_id, collection: @shops, prompt: 'Выберите магазин', label_method: :last, value_method: :first
+  = f.input :name, label: 'Название'
+  = f.input :description, label: 'Описание'
+  = f.input :price, label: 'Цена'
+  = f.input :weight, label: 'Вес'
   = f.input :image, as: :file
-  = f.submit 'Save'
+  = f.submit 'Сохранить'

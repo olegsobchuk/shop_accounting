@@ -4,30 +4,30 @@ h1 Account
   = form_tag assistant_accounts_path, method: :get
   = text_field_tag :from_date, params[:from_date], class: 'datepicker'
   = text_field_tag :to_date, params[:to_date], class: 'datepicker'
-  = submit_tag 'Generate'
+  = submit_tag 'ОК'
 
 #sold_things
   table
     thead
       tr
-        th UID
-        th Name
-        th Description
-        th Image
-        th Weight
-        th Price
-        th Discount
-        th Price(with discount)
-        th Shop
-        th Thumb
+        th Уникальный номер
+        th Название
+        th Описание
+        th Изображение
+        th Вес
+        th Цена
+        th Скидка, %
+        th Цена без скидки
+        th Магазин
+        th Изображение
     tbody
       = render partial: 'thing', collection: @things
 
   hr
-  | Total for period
+  | ВСЕГО ЗА ПЕРИОД
   br
-  ' Total weigh:
+  ' Общий вес:
   = total_weight(@things)
   br
-  ' Total incoming:
+  ' Общая сумма:
   = total_incoming(@things)

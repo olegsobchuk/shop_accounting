@@ -1,17 +1,14 @@
 h1 Assistants
 
-div
-  = link_to '+ Add', new_admin_assistant_path
-
 table
   thead
     tr
       th Email
-      th First Name
-      th Last Name
-      th Phone First
-      th Phone Secont
-      th Shop
+      th Имя
+      th Фамилия
+      th Осн. номер тел.
+      th Доп. номер тел.
+      th Магазин
       th
   tbody
     = render partial: 'assistant', collection: @assistants
