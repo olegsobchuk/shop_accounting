@@ -1,7 +1,7 @@
-h1 Shop
+h1 Магазин
 
-= simple_form_for [current_owner, @shop] do |f|
-  = f.input :name
-  = f.input :city
-  = f.input :address
-  = f.submit 'Save'
+= simple_form_for [:owner, @shop] do |f|
+  = f.input :name, label: 'Название'
+  = f.input :city, label: 'Город'
+  = f.input :address, label: 'Адресс'
+  = f.submit 'Сохранить'

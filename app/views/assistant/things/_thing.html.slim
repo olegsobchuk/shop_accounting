@@ -17,4 +17,4 @@ tr id="thing_#{thing.id}"
     = thing.sum.round(2)
   td
     - unless thing.sold
-      = button_to('Sell', assistant_thing_path(thing), method: :patch, data: { confirm: 'Are uoy sure?', disable_with: 'Processing...' })
+      = button_to('Продано', assistant_thing_path(thing), method: :patch, data: { confirm: 'Вы уверены', disable_with: 'Обработка...' })

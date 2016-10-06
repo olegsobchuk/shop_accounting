@@ -1,17 +1,14 @@
-h1 Shops list
+h1 Список магазинов
 
 div
-  = link_to '+ Add', new_owner_shop_path
+  = link_to '+ Добавить', new_owner_shop_path
 
 table
   thead
     tr
-      th
-        Name
-      th
-        City
-      th
-        Address
+      th Название
+      th Город
+      th Адресс
       th
   tbody
     = render partial: 'shop', collection: @shops

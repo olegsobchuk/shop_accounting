@@ -1,19 +1,19 @@
 div
-  = link_to 'Sold', assistant_accounts_path
+  = link_to 'Продано', assistant_accounts_path
 #search
   = search_field_tag :uid
 
 table#things
   thead
     tr
-      th UID
-      th Name
-      th Description
-      th Image
-      th Weight
-      th Price
-      th Discount
-      th Summary
+      th Уник. номер
+      th Название
+      th Описание
+      th Изображение
+      th Вес
+      th Цена
+      th Скидка, %
+      th Сумма
       th
   tbody
     = render partial: 'thing', collection: @things

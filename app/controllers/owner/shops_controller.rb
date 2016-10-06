@@ -14,8 +14,8 @@ class Owner::ShopsController < OwnerController
   end
 
   def create
-    shop = Shop.new(shop_params)
-    if shop.valid? && shop.save
+    @shop = Shop.new(shop_params)
+    if @shop.valid? && @shop.save
       redirect_to owner_shops_path
     else
       render :new
