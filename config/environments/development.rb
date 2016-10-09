@@ -24,7 +24,17 @@ Rails.application.configure do
   config.assets.debug = true
   config.assets.quiet = true
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
   config.action_mailer.delivery_method = :letter_opener
+  # config.action_mailer.delivery_method = :smtp
+  # ActionMailer::Base.smtp_settings = {
+  #   address: 'smtp.sendgrid.net',
+  #   port: 587,
+  #   authentication: :plain,
+  #   enable_starttls_auto: true,
+  #   user_name: SECRETS[:sendgrid_username],
+  #   password: SECRETS[:sendgrid_password]
+  # }
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
