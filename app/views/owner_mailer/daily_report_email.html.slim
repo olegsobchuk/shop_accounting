@@ -1,0 +1,50 @@
+css:
+  table {
+      border-collapse: collapse;
+  }
+
+  table, th, td {
+      border: 1px solid black;
+  }
+
+h1
+  | За вчера (
+  = readable_date(Date.yesterday)
+  | ) было продано
+
+table
+  thead
+    tr
+      th Магазин
+      th Название
+      th Описание
+      th Вес
+      th Цена
+      th Скидка
+      th Цена со скидкой
+  tbody
+    - @things.each do |thing|
+      tr
+        td = thing.shop.name
+        td = thing.name
+        td = thing.description
+        td = thing.weight
+        td = thing.price
+        td = thing.discount
+        td = thing.sum
+
+hr
+
+' Всего за
+=> readable_date(Date.yesterday)
+| было продано:
+br
+' - общего веса:
+=> total_weight(@things)
+| кг.
+
+br
+
+' - на сумму:
+=> total_incoming(@things)
+| грн.
