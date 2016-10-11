@@ -20,5 +20,5 @@ tr
   td
     = image_tag(thing.image_thumb) if thing.image_thumb
   td
-    => link_to 'Редактировать', edit_owner_thing_path(thing, back_path: request.env['PATH_INFO'])
-    = link_to 'Удалить', owner_thing_path(thing, back_path: request.env['PATH_INFO']), method: :delete, data: { confirm: 'Are you sure?' }
+    => link_to 'Редактировать', edit_owner_thing_path(thing, back_path: request.env['PATH_INFO']), class: 'ui brown basic button'
+    = link_to 'Удалить', owner_thing_path(thing, back_path: request.env['PATH_INFO']), method: :delete, data: { confirm: 'Are you sure?' }, class: 'ui red button'

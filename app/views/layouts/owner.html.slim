@@ -10,16 +10,14 @@ html
   body
     div
       - if current_owner
-        => link_to 'Доствки', owner_deliveries_path
-        | |
-        => link_to 'Магазины', owner_shops_path
-        | |
-        => link_to 'Продавцы', owner_assistants_path
-        | |
-        => link_to current_owner.full_name, edit_owner_profile_path
-        | |
-        = link_to 'Выйти', owner_session_path, method: :delete
+          .ui.secondary.menu
+            = link_to 'Доствки', owner_deliveries_path, class: 'item'
+            = link_to 'Магазины', owner_shops_path, class: 'item'
+            = link_to 'Продавцы', owner_assistants_path, class: 'item'
+            = link_to current_owner.full_name, edit_owner_profile_path, class: 'item'
+            = link_to 'Выйти', owner_session_path, method: :delete, class: 'item'
+          hr
       - else
         = link_to 'Войти как Владелец', new_owner_session_path
-
-    = yield
+    .ui.container
+      = yield

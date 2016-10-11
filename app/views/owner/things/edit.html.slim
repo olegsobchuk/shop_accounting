@@ -1,8 +1,8 @@
-h1 Edit thing
+h1 Редактировать запись о товаре
 
 = link_to 'Назад', params[:back_path]
 
-= simple_form_for @thing, url: owner_thing_path(@thing, back_path: params[:back_path]) do |f|
-  = f.input :price, label: 'Цена'
-  = f.input :discount, label: 'Скидка'
-  = f.submit 'Сохранить'
+= simple_form_for @thing, url: owner_thing_path(@thing, back_path: params[:back_path]), html: { class: 'ui form' } do |f|
+  = f.input :price, label: 'Цена', wrapper_html: { class: 'field' }
+  = f.input :discount, label: 'Скидка', wrapper_html: { class: 'field' }
+  = f.submit 'Сохранить', class: 'ui button'

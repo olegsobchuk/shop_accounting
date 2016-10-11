@@ -1,7 +1,7 @@
 h1 Доставка
 
-= simple_form_for [:owner, @delivery] do |f|
+= simple_form_for [:owner, @delivery], html: { class: 'ui form' } do |f|
   = f.input :uid, label: 'Уникальный номер'
-  = f.input :departure, as: :string, placeholder: 'ДД/MM/ГГГГ', label: 'Отправка'
-  = f.input :arrival, as: :string, placeholder: 'ДД/MM/ГГГГ', label: 'Прибытие'
-  = f.submit 'Сохранить'
+  = f.input :departure, as: :string, placeholder: 'ДД/MM/ГГГГ', label: 'Отправка', wrapper_html: { class: 'field' }
+  = f.input :arrival, as: :string, placeholder: 'ДД/MM/ГГГГ', label: 'Прибытие', wrapper_html: { class: 'field' }
+  = f.submit 'Сохранить', class: 'ui button'

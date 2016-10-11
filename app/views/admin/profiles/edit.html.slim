@@ -1,9 +1,9 @@
 h1 Редактировать профайл
 
-= simple_form_for current_admin, url: admin_profile_path, method: :patch do |f|
-  = f.input :email
-  = f.input :first_name, label: 'Имя'
-  = f.input :last_name, label: 'Фамилия'
-  = f.input :password, label: 'Пароль'
-  = f.input :password_confirmation, label: 'Подтверждение пароля'
-  = f.submit 'Сохранить'
+= simple_form_for current_admin, url: admin_profile_path, method: :patch, html: { class: 'ui form' } do |f|
+  = f.input :email, wrapper_html: { class: 'field' }, required: false
+  = f.input :first_name, label: 'Имя', wrapper_html: { class: 'field' }, required: false
+  = f.input :last_name, label: 'Фамилия', wrapper_html: { class: 'field' }, required: false
+  = f.input :password, label: 'Пароль', wrapper_html: { class: 'field' }, required: false
+  = f.input :password_confirmation, label: 'Подтверждение пароля', wrapper_html: { class: 'field' }, required: false
+  = f.submit 'Сохранить', class: 'ui button'

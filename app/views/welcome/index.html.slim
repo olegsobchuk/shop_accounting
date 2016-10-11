@@ -1,0 +1,14 @@
+br
+br
+br
+br
+.ui.stackable.four.column.grid.centered
+  .column.centered
+    center
+      = link_to 'Войти как Владелец', new_owner_session_path, class: 'ui grey basic button'
+  .column.centered
+    center
+      = link_to 'Войти как Админ', new_admin_session_path, class: 'ui primary button'
+  .column.centered
+    center
+      = link_to 'Войти как продавец', new_assistant_session_path, class: 'ui primary button'

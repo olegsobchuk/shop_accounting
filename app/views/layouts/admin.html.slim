@@ -10,16 +10,14 @@ html
   body
     div
       - if current_admin
-        => link_to 'Доствки', admin_deliveries_path
-        | |
-        => link_to 'Магазины', admin_shops_path
-        | |
-        => link_to 'Продавцы', admin_assistants_path
-        | |
-        => link_to current_admin.full_name, edit_admin_profile_path
-        | |
-        = link_to 'ВЫЙТИ', admin_session_path, method: :delete
+        .ui.secondary.menu
+          = link_to 'Доствки', admin_deliveries_path, class: 'item'
+          = link_to 'Магазины', admin_shops_path, class: 'item'
+          = link_to 'Продавцы', admin_assistants_path, class: 'item'
+          = link_to current_admin.full_name, edit_admin_profile_path, class: 'item'
+          = link_to 'ВЫЙТИ', admin_session_path, method: :delete, class: 'item'
+        hr
       - else
         = link_to 'Войти как Админ', new_admin_session_path
-
-    = yield
+    .ui.container
+      = yield

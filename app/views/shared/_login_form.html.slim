@@ -1,4 +1,4 @@
-= simple_form_for user, url: url, method: :post do |f|
-  = f.input :email
-  = f.input :password, label: 'Пароль'
-  = f.submit 'Войти'
+= simple_form_for user, url: url, method: :post, html: { class: 'ui form' } do |f|
+  = f.input :email, wrapper_html: { class: 'field' }, required: false
+  = f.input :password, label: 'Пароль', wrapper_html: { class: 'field' }
+  = f.submit 'Войти', class: 'ui button'

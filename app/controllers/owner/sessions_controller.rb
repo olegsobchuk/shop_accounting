@@ -1,6 +1,4 @@
 class Owner::SessionsController < ApplicationController
-  layout false
-
   def new
     @owner = Owner.new
   end
