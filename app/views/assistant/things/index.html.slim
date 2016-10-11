@@ -1,9 +1,9 @@
 div
-  = link_to 'Продано', assistant_accounts_path
-#search
-  = search_field_tag :uid
+  = link_to 'Продано', assistant_accounts_path, class: 'ui yellow right floated button'
+#search.ui.input
+  = search_field_tag :uid, '', placeholder: 'Найти по уник. номеру...'
 
-table#things
+table#things.ui.celled.striped.table
   thead
     tr
       th Уник. номер

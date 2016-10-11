@@ -1,6 +1,4 @@
 class Assistant::SessionsController < ApplicationController
-  layout false
-
   def new
     @assistant = Assistant.new
   end

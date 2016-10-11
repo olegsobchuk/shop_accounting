@@ -18,6 +18,7 @@ gem 'kaminari'
 gem 'light-decorator'
 gem 'oj'
 gem 'sass-rails', '~> 5.0'
+gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 gem 'sendgrid'
 gem 'sidekiq'
 gem 'sinatra', github: 'sinatra', require: false

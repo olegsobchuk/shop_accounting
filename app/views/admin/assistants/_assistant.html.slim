@@ -12,6 +12,6 @@ tr
   td
     = assistant.shop.name
   td
-    => link_to 'Детали', admin_assistant_path(assistant)
-    => link_to 'Редактировать', edit_admin_assistant_path(assistant)
-    = link_to 'Удалить', admin_assistant_path(assistant), method: :delete, data: { confirm: 'Are you sure?' }
+    => link_to 'Подробнее', admin_assistant_path(assistant), class: 'ui positive basic button'
+    => link_to 'Редактировать', edit_admin_assistant_path(assistant), class: 'ui brown basic button'
+    = link_to 'Удалить', admin_assistant_path(assistant), method: :delete, data: { confirm: 'Are you sure?' }, class: 'ui red button'

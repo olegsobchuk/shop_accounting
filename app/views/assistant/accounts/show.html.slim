@@ -2,12 +2,18 @@ h1 Account
 
 #account_form
   = form_tag assistant_accounts_path, method: :get
-  = text_field_tag :from_date, params[:from_date], class: 'datepicker'
-  = text_field_tag :to_date, params[:to_date], class: 'datepicker'
-  = submit_tag 'ОК'
+  span.ui.input
+    = text_field_tag :from_date, params[:from_date], class: 'datepicker'
+  '
+  span.ui.input
+    = text_field_tag :to_date, params[:to_date], class: 'datepicker'
+  '
+  = submit_tag 'ОК', class: 'ui primary button'
+
+br
 
 #sold_things
-  table
+  table.ui.celled.striped.table
     thead
       tr
         th Уникальный номер

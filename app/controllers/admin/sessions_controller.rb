@@ -1,6 +1,4 @@
 class Admin::SessionsController < ApplicationController
-  layout false
-
   def new
     @admin = Admin.new
   end

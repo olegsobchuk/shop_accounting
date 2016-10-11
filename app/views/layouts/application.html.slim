@@ -8,10 +8,5 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
   body
-    div
-      => link_to 'Войти как Владелец', new_owner_session_path
-      ' |
-      = link_to 'Войти как Админ', new_admin_session_path
-      ' |
-      = link_to 'Войти как продавец', new_assistant_session_path
-    = yield
+    .ui.container
+      = yield
