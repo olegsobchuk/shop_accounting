@@ -3,4 +3,5 @@ class Shop < ApplicationRecord
 
   has_many :things
   has_many :assistance
+  has_many :tracks
 end

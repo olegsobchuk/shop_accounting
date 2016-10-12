@@ -1,0 +1,16 @@
+h1
+  ' Детальнее о товаре
+  = @thing.uid
+
+= link_to 'Назад', params[:back_path], class: 'ui inverted green button'
+
+h3 Изменения товара
+table.ui.celled.striped.table
+  tbody
+    tr
+      th Магазин
+      th Цена
+      th Дисконт
+      th Дата
+  tbody
+    = render partial: 'owner/things/track', collection: @tracks

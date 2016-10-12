@@ -1,0 +1,1 @@
+class TrackDecorator < ApplicationDecorator; end
