@@ -3,6 +3,10 @@ module ApplicationHelper
     date ? date.strftime('%d/%m/%Y') : nil
   end
 
+  def readable_date_time(date_time)
+    date_time ? date_time.strftime('%H:%m:%S %d/%m/%Y') : nil
+  end
+
   def total_incoming(things)
     things.inject(0) { |sum, thing| sum + thing.sum }
   end

@@ -1,7 +1,7 @@
 h1 Магазин
 
-= simple_form_for [:owner, @shop] do |f|
-  = f.input :name, label: 'Название'
-  = f.input :city, label: 'Город'
-  = f.input :address, label: 'Адресс'
-  = f.submit 'Сохранить'
+= simple_form_for [:owner, @shop], html: { class: 'ui form' } do |f|
+  = f.input :name, label: 'Название', wrapper_html: { class: 'field' }
+  = f.input :city, label: 'Город', wrapper_html: { class: 'field' }
+  = f.input :address, label: 'Адресс', wrapper_html: { class: 'field' }
+  = f.submit 'Сохранить', class: 'ui button'

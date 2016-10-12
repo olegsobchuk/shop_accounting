@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161002131136) do
+ActiveRecord::Schema.define(version: 20161012182335) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,17 @@ ActiveRecord::Schema.define(version: 20161002131136) do
     t.index ["sold_date"], name: "index_things_on_sold_date", using: :btree
   end
 
+  create_table "tracks", force: :cascade do |t|
+    t.integer  "thing_id"
+    t.integer  "shop_id"
+    t.decimal  "price"
+    t.integer  "discount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["shop_id"], name: "index_tracks_on_shop_id", using: :btree
+    t.index ["thing_id"], name: "index_tracks_on_thing_id", using: :btree
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email"
     t.string   "password_digest"
@@ -68,5 +79,7 @@ ActiveRecord::Schema.define(version: 20161002131136) do
     t.index ["shop_id"], name: "index_users_on_shop_id", using: :btree
   end
 
+  add_foreign_key "tracks", "shops"
+  add_foreign_key "tracks", "things"
   add_foreign_key "users", "shops"
 end

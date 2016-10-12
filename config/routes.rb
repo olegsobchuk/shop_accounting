@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resource :profile, only: [:edit, :update]
     resources :assistants, only: [:index, :show]
     resources :deliveries, except: :destroy
-    resources :things, only: [:edit, :update, :destroy]
+    resources :things, only: [:show, :edit, :update, :destroy]
     resources :shops
   end
 

@@ -1,5 +1,10 @@
 class Owner::ThingsController < OwnerController
-  before_action :thing, only: [:show, :edit, :update, :destroy]
+  before_action :thing, only: [:edit, :update, :destroy]
+
+  def show
+    @thing = Thing.includes(tracks: :shop).find(params[:id])
+    @tracks = @thing.tracks
+  end
 
   def edit
     render action: :edit, back_path: params[:back_path]

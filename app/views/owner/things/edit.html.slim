@@ -1,6 +1,6 @@
 h1 Редактировать запись о товаре
 
-= link_to 'Назад', params[:back_path]
+= link_to 'Назад', params[:back_path], class: 'ui inverted green button'
 
 = simple_form_for @thing, url: owner_thing_path(@thing, back_path: params[:back_path]), html: { class: 'ui form' } do |f|
   = f.input :price, label: 'Цена', wrapper_html: { class: 'field' }

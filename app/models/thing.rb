@@ -1,9 +1,12 @@
 class Thing < ApplicationRecord
+  after_save :track_it
+
   validates :name, :description, :price, :weight, presence: true
-    validates :uid, uniqueness: true, presence: true
+  validates :uid, uniqueness: true, presence: true
 
   belongs_to :delivery
   belongs_to :shop
+  has_many :tracks
 
   scope :by_create, -> { order(:created_at) }
   scope :existing, -> { where(sold_date: nil) }
@@ -24,5 +27,11 @@ class Thing < ApplicationRecord
       self.image_thumb = FlickRaw.url_t(info)
       self.save
     end
+  end
+
+  private
+
+  def track_it
+    tracks.create(shop: shop, price: price, discount: discount)
   end
 end
